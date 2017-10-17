@@ -1,0 +1,47 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}PQM{% endblock %}
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle"
+data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/">提测页</a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li><a href="/">Home</a></li>
+</ul>
+</div>
+</div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+{% block page_content %}
+<h1 style="text-align:center">{{projectname}}项目提测页</h1>
+<a href="http://qa.mistong.com" target="_blank">该项目测试用例链接</a>
+    <br><br><br>
+<p>请输入sql变更文件的路径:</p>
+<textarea rows="3" cols="100">{{sql}}</textarea><br><br>
+<p>代码更新：</p>
+<form>
+<input type="radio" name="code_flag" value="git" checked>git
+<input type="radio" name="code_flag" value="svn">svn
+</form>
+<form>
+ 路径:
+<input type="text" name="firstname">
+ 分支:
+<input type="text" name="lastname">
+<button type="button" class="el-button el-button--primary el-button--mini"><span>添加</span></button>
+</form>
+
+{% endblock %}
+</div>
+{% endblock %}
